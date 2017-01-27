@@ -1,21 +1,25 @@
+        <div ng-repeat ='product in products'>
+
+
         <!--Product Image-->
+        <img ng-src="{{product.image}}" ng-click="collapsed = true" ng-hide="collapsed"alt="close this">
         <!--Product Image click collapse the image-->
         <a class="product-grid__product" >
             <img class="product-grid__img"   sizes="(min-width: 960px) 33vw, (min-width: 769px) 50vw, 100vw" alt="">
         </a>
-        <a class="product-grid__product">
+        <a class="product-grid__product" ng-click="collapsed = false" ng-show="collapsed">
             show image
         </a>
-
         <!--Product Meta-->
         <div class="product-grid__meta">
             <!--Title click Should redirect to the product-details section. remember to pass along the product id so you can make an api call
         to get the specific product details-->
-            <h3 class="product-grid__name"><a><!--Title--></a></h3>
-            
+            <h3 class="product-grid__name"><a ui-sref='product-details({id: product.id})'>{{product.title}}</a></h3>
+
             <!--Product Description-->
-            <h4 class="product-grid__sub"><!--Desc--></h4>
+            <h4 class="product-grid__sub">{{product.desc}}</h4>
 
             <!--Product Price-->
-            <div class="product-grid__price"><!--Price--></div>
+            <div class="product-grid__price">{{product.price | currency}}</div>
         </div>
+</div>
