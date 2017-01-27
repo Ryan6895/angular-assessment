@@ -1,10 +1,12 @@
     <div class="product-grid__item  grid__item one-half large--one-third" >
     <!--Product Image-->
-    <img src="{{item.image}}" alt="">
+    <img src="{{item.image}}"  ng-click="collapsed = true" ng-hide="collapsed" alt="">
     <a class="product-grid__product">
         <img class="product-grid__img"  sizes="(min-width: 960px) 33vw, (min-width: 769px) 50vw, 100vw" alt="">
     </a>
-
+    <a class="product-grid__product" ng-click="collapsed = false" ng-show="collapsed">
+        show image
+    </a>
     <!--Product Meta-->
     <div class="product-grid__meta">
         <!-- Tittle-->
@@ -13,6 +15,6 @@
         <h4 class="product-grid__sub">{{item.desc}}</h4>
 
         <!--Product Price-->
-        <div class="product-grid__price">{{item.price}}</div>
+        <div class="product-grid__price">{{item.price | currency}}</div>
     </div>
 </div>
