@@ -3,14 +3,14 @@ angular.module('assessment')
   this.getProducts = function() {
     return $http({
       method: 'GET',
-      url: 'http://practiceapi.devmounta.in/products'
+      url: 'https://practiceapi.devmounta.in/products'
     })
   }
   this.getProduct = function(id) {
   var deferred = $q.defer();
   $http({
     method: 'GET',
-    url: 'http://practiceapi.devmounta.in/products/'+ id
+    url: 'https://practiceapi.devmounta.in/products/'+ id
   }).then(function(info) {
     var theItem = info.data
   console.log(theItem);
